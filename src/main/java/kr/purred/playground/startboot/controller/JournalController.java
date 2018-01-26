@@ -1,10 +1,12 @@
 package kr.purred.playground.startboot.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -12,10 +14,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import kr.purred.playground.startboot.model.domain.JournalEntry;
+import kr.purred.playground.startboot.model.repository.JournalRepository;
 
 @RestController
 public class JournalController
 {
+	@Autowired JournalRepository journalRepository;
+
 	private static List<JournalEntry> entries = new ArrayList<> ();
 
 	static
@@ -53,5 +58,15 @@ public class JournalController
 		entries.add (entry);
 
 		return entry;
+	}
+
+	@GetMapping("/")
+	public ModelAndView index (ModelAndView mv)
+	{
+		mv.setViewName ("index");
+
+		mv.addObject ("journal", journalRepository.findAll ());
+
+		return mv;
 	}
 }
