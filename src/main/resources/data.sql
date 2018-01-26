@@ -1,0 +1,2 @@
+INSERT INTO JOURNAL(title, summary, created) VALUES ('스프링 부트 입문', '오늘 부터 스프링 배웠다.', '2018-01-26 00:00:00.00')
+INSERT INTO JOURNAL(title, summary, created) VALUES ('간단한 부트 프로젝트', '오늘 부터 스프링 배웠다.', '2018-01-26 00:00:00.00')
