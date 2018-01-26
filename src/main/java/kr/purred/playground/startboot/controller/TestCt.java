@@ -1,4 +1,4 @@
-package kr.purred.playground.startboot;
+package kr.purred.playground.startboot.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

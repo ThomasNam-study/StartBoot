@@ -28,7 +28,21 @@ configurations {
 }
 
 dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+
+	compile('com.jayway.jsonpath:json-path')
+
+	runtime('org.springframework.boot:spring-boot-devtools')
+
+	compileOnly('org.springframework.boot:spring-boot-configuration-processor')
+	compileOnly('org.projectlombok:lombok')
+
+	compile('com.h2database:h2')
+
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
 	//compile('org.springframework.boot:spring-boot-starter-data-rest')
 	//compile('org.springframework.data:spring-data-rest-hal-browser')
 	//compile('org.flywaydb:flyway-core')
@@ -40,16 +54,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-social-linkedin')
 	compile('org.springframework.boot:spring-boot-starter-social-twitter')*/
 	//compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.boot:spring-boot-starter-batch')
-	compile('com.h2database:h2')
-
-	runtime('org.springframework.boot:spring-boot-devtools')
+	// compile('org.springframework.boot:spring-boot-starter-batch')
 	//runtime('mysql:mysql-connector-java')
-	compileOnly('org.springframework.boot:spring-boot-configuration-processor')
-	compileOnly('org.projectlombok:lombok')
 	//providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
-	//testCompile('org.springframework.boot:spring-boot-starter-test')
 	//testCompile('org.springframework.security:spring-security-test')
 }
