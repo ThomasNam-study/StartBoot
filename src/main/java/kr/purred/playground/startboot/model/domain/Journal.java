@@ -9,12 +9,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
 
 @Entity
+@Table (name = "journal")
 @Data
 @Accessors(chain = true)
 public class Journal
@@ -45,6 +47,7 @@ public class Journal
 		this.summary = summary;
 	}
 
+	@JsonIgnore
 	public String getCreatedAsShort ()
 	{
 		return format.format (this.created);

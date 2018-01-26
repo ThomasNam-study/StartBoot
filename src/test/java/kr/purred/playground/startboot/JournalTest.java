@@ -17,7 +17,7 @@ public class JournalTest
 	@Test
 	public void myTest ()
 	{
-		journalService.insertData ();
+		// journalService.insertData ();
 
 		System.out.println (journalService.findAll ());
 	}

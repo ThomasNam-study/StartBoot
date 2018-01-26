@@ -2,9 +2,28 @@ server:
   port: 9999
 
 spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/playground?autoReconnect=true&noDatetimeStringSync=true&zeroDateTimeBehavior=convertToNull&characterEncoding=utf8&useUnicode=true&mysqlEncoding=utf8&noAccessToProcedureBodies=true
+    username: root
+    password: gkslskfk
+    dbcp2:
+      test-while-idle: true
+      validation-query: SELECT 1
+
+
+
   h2:
     console:
       enabled: true
 
   jpa:
     show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+
+
