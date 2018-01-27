@@ -23,8 +23,7 @@ public class ResourceSecurityConfiguration extends WebSecurityConfigurerAdapter
 	{
 		http.authorizeRequests ()
 			.antMatchers ("/").permitAll ()
-			// .anyRequest ().authenticated ()
-			// .antMatchers ("/api/**").authenticated ()
+			.anyRequest ().authenticated ()
 		.and ()
 			.formLogin ()
 			.loginPage ("/login").permitAll ()
