@@ -10,7 +10,9 @@ spring:
       test-while-idle: true
       validation-query: SELECT 1
 
-
+  data:
+    rest:
+      base-path: /api
 
   h2:
     console:

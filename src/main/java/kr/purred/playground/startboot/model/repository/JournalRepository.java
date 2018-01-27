@@ -3,13 +3,17 @@ package kr.purred.playground.startboot.model.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
 
 import kr.purred.playground.startboot.model.domain.Journal;
 
+@Transactional
+@RepositoryRestResource(collectionResourceRel = "entry", path = "journal")
 public interface JournalRepository extends JpaRepository<Journal, Long>
 {
 	List<Journal> findByTitleContaining (@Param("word") String word);
