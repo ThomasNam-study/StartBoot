@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import kr.purred.playground.startboot.message.ProducerRedis;
 import kr.purred.playground.startboot.model.domain.JournalEntry;
 import kr.purred.playground.startboot.model.repository.JournalRepository;
 
@@ -20,6 +21,8 @@ import kr.purred.playground.startboot.model.repository.JournalRepository;
 public class JournalController
 {
 	@Autowired JournalRepository journalRepository;
+
+	@Autowired ProducerRedis producerRedis;
 
 	private static List<JournalEntry> entries = new ArrayList<> ();
 
@@ -66,6 +69,8 @@ public class JournalController
 		mv.setViewName ("index");
 
 		mv.addObject ("journal", journalRepository.findAll ());
+
+		producerRedis.sendTo ("spring-boot", "스프링 부트와 레디스 메시징 시작!");
 
 		return mv;
 	}
