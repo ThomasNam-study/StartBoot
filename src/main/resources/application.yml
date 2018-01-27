@@ -24,7 +24,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
     hibernate:
-      ddl-auto: create-drop
+      #ddl-auto: create-drop
       naming:
         strategy: org.hibernate.cfg.ImprovedNamingStrategy
 

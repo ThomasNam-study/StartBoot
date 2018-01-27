@@ -37,6 +37,10 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-mobile')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 
+	compile('org.springframework.security:spring-security-taglibs')
+
+	compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4')
+
 	compile('org.springframework.data:spring-data-rest-hal-browser')
 
 	compile('com.jayway.jsonpath:json-path')

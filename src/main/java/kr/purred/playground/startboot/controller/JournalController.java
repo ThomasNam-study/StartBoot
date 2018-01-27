@@ -69,4 +69,12 @@ public class JournalController
 
 		return mv;
 	}
+
+	@GetMapping("/login")
+	public ModelAndView login (ModelAndView mv)
+	{
+		mv.setViewName ("login");
+
+		return mv;
+	}
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html" />
@@ -27,6 +27,12 @@
 
 <div class="container">
 	<h1>스프링 부트 일기</h1>
+
+	<p sec:authorize="isAuthenticated()">
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="로그아웃"/>
+	</form>
+	</p>
 
 	<ul class="timeline">
 		<!--/*@thymesVar id="journal" type="kr.purred.playground.startboot.model.domain.Journal"*/-->
