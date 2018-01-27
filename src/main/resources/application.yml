@@ -28,4 +28,7 @@ spring:
       naming:
         strategy: org.hibernate.cfg.ImprovedNamingStrategy
 
-
+security:
+  user:
+    name: red
+    password: red
