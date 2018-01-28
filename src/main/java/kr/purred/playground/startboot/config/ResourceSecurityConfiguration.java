@@ -22,7 +22,7 @@ public class ResourceSecurityConfiguration extends WebSecurityConfigurerAdapter
 	protected void configure (HttpSecurity http) throws Exception
 	{
 		http.authorizeRequests ()
-			.antMatchers ("/", "/test/**").permitAll ()
+			.antMatchers ("/", "/test/**", "/stomp", "/stomp/**", "/topic/**").permitAll ()
 			.anyRequest ().authenticated ()
 		.and ()
 			.formLogin ()
