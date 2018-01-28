@@ -28,6 +28,8 @@ public class ResourceSecurityConfiguration extends WebSecurityConfigurerAdapter
 			.formLogin ()
 			.loginPage ("/login").permitAll ()
 		.and ()
-			.logout ().permitAll ();
+			.logout ().permitAll ()
+		.and ()
+			.csrf ().disable ();
 	}
 }

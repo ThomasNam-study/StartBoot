@@ -37,4 +37,24 @@ security:
     resource:
       filter-order: 3
 
+flyway:
+  enabled: true
+  check-location: true # 마이그레이션 스크립트 파일이 존재하는지 여부를 확인
+  baseline-on-migrate: true
+  encoding: UTF-8
+  locations: classpath:db/migration # 마이그레이션 스크립트 위치
+  sql-migration-prefix: V
+  sql-migration-suffix: .sql
 
+info:
+  app:
+    name: 스프링 부트 샘플
+    description: 액추에이터 모듈
+    version: 1.0.0
+
+endpoints:
+  beans:
+    sensitive: false
+
+management:
+  context-path: /monitor

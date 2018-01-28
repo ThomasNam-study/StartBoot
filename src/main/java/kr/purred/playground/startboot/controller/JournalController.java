@@ -1,6 +1,7 @@
 package kr.purred.playground.startboot.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.metrics.CounterService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +24,11 @@ public class JournalController
 	@Autowired JournalRepository journalRepository;
 
 	@Autowired ProducerRedis producerRedis;
+
+	/**
+	 * 카운터 Sv
+	 */
+	@Autowired CounterService counterService;
 
 	private static List<JournalEntry> entries = new ArrayList<> ();
 
@@ -66,6 +72,8 @@ public class JournalController
 	@GetMapping("/")
 	public ModelAndView index (ModelAndView mv)
 	{
+		counterService.increment ("INDEX");
+
 		mv.setViewName ("index");
 
 		mv.addObject ("journal", journalRepository.findAll ());
