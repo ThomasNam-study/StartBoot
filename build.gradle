@@ -37,6 +37,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-mobile')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.springframework.boot:spring-boot-starter-amqp')
 
 	compile('org.springframework.security:spring-security-taglibs')
 	compile('org.springframework.security.oauth:spring-security-oauth2')
